@@ -2,8 +2,14 @@ import './index.css';
 
 import { swipeElement } from '$utils/jquery';
 import { loadScript } from '$utils/loadScript';
-import { articlesSwiper } from '$utils/swiper';
-import { scrollTop, triggerHero } from '$utils/typescript';
+import { articlesSwiper, chiffresSwiper, referencesSwiper, uneBlogSwiper } from '$utils/swiper';
+import {
+  LogoScroll,
+  scrollTop,
+  triggerContact,
+  triggerFooter,
+  triggerHero,
+} from '$utils/typescript';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -15,6 +21,8 @@ window.Webflow.push(() => {
     loadScript(
       'https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js'
     ),
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js'),
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-toc@1/toc.js'),
   ]);
 
   // Load swipeElement
@@ -22,10 +30,18 @@ window.Webflow.push(() => {
 
   // Trigger hero button
   triggerHero();
+  triggerFooter();
+  triggerContact;
 
   // scrolltop Trigger
   scrollTop();
+  LogoScroll();
 
   // Load swiper
   articlesSwiper();
+  referencesSwiper();
+  chiffresSwiper();
+
+  // Load swiper - Blog
+  uneBlogSwiper();
 });

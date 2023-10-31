@@ -41,6 +41,7 @@
     "@finsweet/tsconfig": "^1.3.2",
     "@playwright/test": "^1.35.0",
     "@types/jquery": "^3.5.24",
+    "@types/swiper": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
     "cross-env": "^7.0.3",

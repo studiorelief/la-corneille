@@ -21,9 +21,49 @@ function triggerHero(): void {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  triggerHero();
-});
+// Trigger button footer (news)
+function triggerFooter(): void {
+  // Sélection de l'élément déclencheur
+  const trigger: HTMLElement | null = document.querySelector('#newsletter-footer-trigger');
+
+  if (!trigger) {
+    return;
+  }
+
+  // Ajout d'un écouteur d'événement sur l'élément déclencheur
+  trigger.addEventListener('click', function () {
+    // Sélection de l'élément à cliquer
+    const button: HTMLElement | null = document.querySelector('#newsletter-footer-button');
+
+    if (!button) {
+      return;
+    }
+
+    // Simule un clic sur l'élément
+    button.click();
+  });
+}
+
+// Trigger button contact (lead)
+function triggerContact(): void {
+  // Sélection de l'élément déclencheur
+  const trigger: HTMLElement | null = document.querySelector('#contact-trigger');
+  if (!trigger) {
+    return;
+  }
+
+  // Ajout d'un écouteur d'événement sur l'élément déclencheur
+  trigger.addEventListener('click', function () {
+    // Sélection de l'élément à cliquer
+    const button: HTMLElement | null = document.querySelector('#contact-button');
+    if (!button) {
+      return;
+    }
+
+    // Simule un clic sur l'élément
+    button.click();
+  });
+}
 
 // Scroll Top button
 function scrollTop(): void {
@@ -50,8 +90,23 @@ function scrollTop(): void {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  scrollTop();
-});
+function LogoScroll(): void {
+  const logo = document.querySelector('.navbar_logo-link');
 
-export { scrollTop, triggerHero };
+  // Si logo n'existe pas, quittez la fonction
+  if (!logo) return;
+
+  // Écoutez l'événement de défilement
+  window.addEventListener('scroll', () => {
+    // Convertir 5rem en pixels (en supposant que 1rem est égal à 16px par défaut)
+    const triggerDistance = 15 * 16;
+
+    if (window.scrollY >= triggerDistance) {
+      logo.classList.add('visible');
+    } else {
+      logo.classList.remove('visible');
+    }
+  });
+}
+
+export { LogoScroll, scrollTop, triggerContact, triggerFooter, triggerHero };
