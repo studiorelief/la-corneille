@@ -18,7 +18,7 @@ function articlesSwiper() {
       //* bug on loop à régler
       loop: true,
       grabCursor: true,
-      slideToClickedSlide: true,
+      slideToClickedSlide: false,
       autoHeight: false,
       speed: 500,
       mousewheel: {
@@ -68,7 +68,7 @@ function referencesSwiper() {
       //* bug on loop à régler
       loop: true,
       grabCursor: true,
-      slideToClickedSlide: true,
+      slideToClickedSlide: false,
       autoHeight: true,
       speed: 500,
       mousewheel: {
@@ -119,7 +119,7 @@ function uneBlogSwiper() {
       //* bug on loop à régler
       loop: true,
       grabCursor: true,
-      slideToClickedSlide: true,
+      slideToClickedSlide: false,
       autoHeight: true,
       speed: 500,
       mousewheel: {
@@ -170,7 +170,7 @@ function chiffresSwiper() {
       //* bug on loop à régler
       loop: true,
       grabCursor: true,
-      slideToClickedSlide: true,
+      slideToClickedSlide: false,
       autoHeight: true,
       speed: 500,
       mousewheel: {

@@ -109,4 +109,43 @@ function LogoScroll(): void {
   });
 }
 
-export { LogoScroll, scrollTop, triggerContact, triggerFooter, triggerHero };
+function monthCall(dateStr: string): string {
+  const months = [
+    '',
+    'Janvier',
+    'Février',
+    'Mars',
+    'Avril',
+    'Mai',
+    'Juin',
+    'Juillet',
+    'Août',
+    'Septembre',
+    'Octobre',
+    'Novembre',
+    'Décembre',
+  ];
+
+  const [day, month, year] = dateStr.split('/');
+  return `${day} ${months[parseInt(month)]} ${year}`;
+}
+
+function translateDatesInContent() {
+  const datePattern = /\b(\d{1,2}\/\d{1,2}\/\d{4})\b/g;
+  const elementsWithMonthAttr = document.querySelectorAll('[month="full"]');
+
+  elementsWithMonthAttr.forEach((element) => {
+    element.innerHTML = element.innerHTML.replace(datePattern, (match) => {
+      return monthCall(match);
+    });
+  });
+}
+
+export {
+  LogoScroll,
+  scrollTop,
+  translateDatesInContent,
+  triggerContact,
+  triggerFooter,
+  triggerHero,
+};

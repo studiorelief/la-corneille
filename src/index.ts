@@ -6,6 +6,7 @@ import { articlesSwiper, chiffresSwiper, referencesSwiper, uneBlogSwiper } from 
 import {
   LogoScroll,
   scrollTop,
+  translateDatesInContent,
   triggerContact,
   triggerFooter,
   triggerHero,
@@ -27,6 +28,9 @@ window.Webflow.push(() => {
 
   // Load swipeElement
   swipeElement();
+
+  // Load month
+  translateDatesInContent();
 
   // Trigger hero button
   triggerHero();
