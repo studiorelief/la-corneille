@@ -1,6 +1,6 @@
 import './index.css';
 
-import { swipeElement } from '$utils/jquery';
+import { hideEmpty, swipeElement } from '$utils/jquery';
 import { loadScript } from '$utils/loadScript';
 import { articlesSwiper, chiffresSwiper, referencesSwiper, uneBlogSwiper } from '$utils/swiper';
 import {
@@ -28,6 +28,7 @@ window.Webflow.push(() => {
 
   // Load swipeElement
   swipeElement();
+  hideEmpty();
 
   // Load month
   translateDatesInContent();
@@ -35,7 +36,7 @@ window.Webflow.push(() => {
   // Trigger hero button
   triggerHero();
   triggerFooter();
-  triggerContact;
+  triggerContact();
 
   // scrolltop Trigger
   scrollTop();

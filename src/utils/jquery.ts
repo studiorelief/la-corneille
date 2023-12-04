@@ -8,4 +8,11 @@ function swipeElement() {
   });
 }
 
-export { swipeElement };
+function hideEmpty() {
+  // Masquer le parent si le CMS est vide
+  $('.w-dyn-empty').each(function () {
+    $(this).parent().hide();
+  });
+}
+
+export { hideEmpty, swipeElement };
