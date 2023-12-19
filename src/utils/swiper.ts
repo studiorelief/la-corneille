@@ -57,6 +57,57 @@ function articlesSwiper() {
   });
 }
 
+function ressourcerieSwiper() {
+  // swiper show - programmation
+  $('.ressourcerie_component').each(function () {
+    const id = $(this).data('id');
+
+    new Swiper($(this).find('.swiper.is-ressourcerie')[0], {
+      modules: [Navigation, Mousewheel, Keyboard],
+      direction: 'horizontal',
+      slidesPerView: 1,
+      //* bug on loop à régler
+      loop: true,
+      grabCursor: true,
+      slideToClickedSlide: false,
+      autoHeight: false,
+      speed: 500,
+      mousewheel: {
+        forceToAxis: true,
+        sensitivity: 1,
+        thresholdDelta: 1,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      navigation: {
+        // Navigation arrows
+        nextEl: `.swiper-button-next[data-nav-id="${id}"]`,
+        prevEl: `.swiper-button-prev[data-nav-id="${id}"]`,
+      },
+      slideActiveClass: 'is-active',
+      breakpoints: {
+        // mobile landscape
+        480: {
+          slidesPerView: 1,
+          spaceBetween: '4%',
+        },
+        // tablet
+        768: {
+          slidesPerView: 2,
+          spaceBetween: '4%',
+        },
+        // desktop
+        992: {
+          slidesPerView: 3,
+          spaceBetween: '4%',
+        },
+      },
+    });
+  });
+}
+
 function referencesSwiper() {
   // swiper show - programmation
   $('.home-references_swiper-w').each(function () {
@@ -209,4 +260,4 @@ function chiffresSwiper() {
   });
 }
 
-export { articlesSwiper, chiffresSwiper, referencesSwiper, uneBlogSwiper };
+export { articlesSwiper, chiffresSwiper, referencesSwiper, ressourcerieSwiper, uneBlogSwiper };
